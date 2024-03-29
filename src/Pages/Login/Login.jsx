@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Divider, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import './Login.css'
 
 const Login = () => {
+    
 
     const handleLogin = e => {
         e.preventDefault()
@@ -10,6 +12,8 @@ const Login = () => {
         const email = from.email.value
         const password = from.password.value
         console.log(email, password)
+
+
     }
 
     return (
