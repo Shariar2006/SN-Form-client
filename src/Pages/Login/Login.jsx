@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Divider, TextField } from "@mui/material";
+import {  TextField } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import './Login.css'
 import { useContext } from "react";
@@ -21,7 +21,7 @@ const Login = () => {
         .then(result => {
             if (result.user) {
                 toast.success('Successfully Register!')
-                // navigate('/login')
+                navigate('/')
             }
             console.log(result.user)
         }).catch(err => {
@@ -44,12 +44,6 @@ const Login = () => {
                     </div>
                     <div>
                         <input className='btn border-none bg-[#922f02] text-[#fff] hover:bg-[#922e00eb] py-3 rounded-lg text-xl font-bold w-full my-4 cursor-pointer' type="submit" value="Login" />
-                    </div>
-                    <Divider>or</Divider>
-                    <div //onClick={loginWithGoogle}
-                        className='flex items-center mt-4 justify-center rounded-lg cursor-pointer border hover:bg-gray-100'>
-                        <img className='w-10 h-10 ' src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" />
-                        <span className='text-[#922f02] text-sm font-semibold'>Continue With Google</span>
                     </div>
 
                     <p className='text-[#9CA3AF] text-base font-semibold text-center mt-4'>Don't have an account? Please <Link to='/register' className='text-[#922f02] underline'>Register</Link></p>
